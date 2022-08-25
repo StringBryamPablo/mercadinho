@@ -6,57 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mercadinho do Bryam</title>
     <link rel="stylesheet" href="../css/login.css">
-
+   
 </head>
 
 <body>
-   
-   
-    <form action="../php/ValidarLogin.php" method="post" name = "formLogin" onsubmit="return validarCampos()">
-        <fieldset>
-            <legend><b>Login</b></legend>
-        <div id="email">
-            Email <input type="text" id = "inEmail" name="email" placeholder="exemplo@gmail.com"><br><br>
+    <h1 class="nomeDoMercado">Ricall</h1>
+   <div class="formulario">
+       <h1>Login</h1>
+    <form action="../php/ValidarLogin.php" method="post" name = "formLogin">
+       
+        <div>
+            Email <input type="email" name="email" placeholder="exemplo@gmail.com" required class="campoEmail"><br><br>
         </div>
-        <div id="senha">
-            Senha <input type="text" id = "inSenha" name="senha" placeholder="digite sua senha"><br><br>
+        <div>
+            Senha <input type="password" name="senha" placeholder="digite sua senha" required class="campoSenha"><br><br>
         </div>
-        <div id="botaoLogin">
-            <input type="submit" value="fazer login"> 
+        <div>
+            <input type="submit" value="fazer login" class="botaoSubmit"> 
         </div>
-        </fieldset>
+        
     </form>
+    </div>
 </body>
 
 </html>
-
-<script>
-    function validarCampos(){
-        if(validarEmail()){
-            return true;
-        }else{
-            alert("Preencha os campos primeiro!!");
-            return false;
-        }
-    }
-
-    function validarEmail(){
-        var email = document.forms["formLogin"]["inEmail"].value;
-
-        if(email.length<2){
-            return false;
-        }else{
-            return true;
-        }
-    }
-
-    function validarSenha(){
-        var senha = document.getElementById("senha").value;
-
-        if(senha.length==0){
-            return false;
-        }else{
-            return true;
-        }
-    }
-</script>

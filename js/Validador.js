@@ -1,12 +1,29 @@
 
-function validarCampos(){
-    if(document.getElementById("email").ariaValueMax.length==0){
-        alert("Por favor, digite seu email");
-        document.getElementById("email").focus();
+ function validarCampos(){
+    if(validarEmail()){
+        return true;
+    }else{
+        alert("Preencha os campos primeiro!!");
         return false;
-    }else if(document.getElementById("senha").ariaValueMax.length==0){
-        alert("Por favor, digite sua senha");
-        document.getElementById("senha").focus();
+    }
+}
+
+function validarEmail(){
+    var email = document.forms["formLogin"]["inEmail"].value;
+
+    if(email.length<2){
         return false;
+    }else{
+        return true;
+    }
+}
+
+function validarSenha(){
+    var senha = document.getElementById("senha").value;
+
+    if(senha.length==0){
+        return false;
+    }else{
+        return true;
     }
 }
